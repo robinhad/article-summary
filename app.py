@@ -9,7 +9,7 @@ nltk.download('punkt')
 
 
 class LinkHandler(tornado.web.RequestHandler):
-    def get(self):
+    def post(self):
         data = json.loads(self.request.body.decode('utf-8'))
         paper = data.get("link")
         article = newspaper.Article(paper)
